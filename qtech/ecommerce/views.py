@@ -14,7 +14,7 @@ class VariantModelView(viewsets.ModelViewSet):
 
 
 class CategoryModelView(viewsets.ModelViewSet):
-    queryset = models.Category.objects.all()
+    queryset = models.Category.objects.prefetch_related('image').all()
     serializer_class = serializers.CategorySerializer
     # permission_classes = [IsAuthenticated]
 
@@ -27,6 +27,25 @@ class ProductModelView(viewsets.ModelViewSet):
 
     def get_queryset(self):
         queryset = super().get_queryset()
+        queryset = queryset.annotate(total=Count('id'))
+        return queryset
+
+    def get_serializer_class(self):
+        if self.request.method in ['POST', 'PUT']:
+            return serializers.ADDProductSerializer
+        return serializers.ProductSerializer
+
+
+class ProductCategoryModelView(viewsets.ModelViewSet):
+    queryset = models.Product.objects.select_related('category').prefetch_related('image',
+                                                                                  'product_variant_price').all()
+    filter_backends = [DjangoFilterBackend]
+    filterset_class = filters.ProductFilter
+
+    def get_queryset(self):
+        print(self.kwargs)
+        queryset = super().get_queryset()
+        queryset = queryset.filter(category_id=self.kwargs.get('category_pk'))
         queryset = queryset.annotate(total=Count('id'))
         return queryset
 

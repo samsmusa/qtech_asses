@@ -27,12 +27,12 @@
 .App-link {
   color: #61dafb;
 }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

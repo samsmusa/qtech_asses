@@ -5,5 +5,6 @@ export const apis = {
     sizes: "/api/ecommerce/variants/?title=size",
     warranties: "/api/ecommerce/variants/?title=warranty",
     brands: "/api/ecommerce/variants/?title=brand",
+    category: "/api/ecommerce/categories/",
   },
 };

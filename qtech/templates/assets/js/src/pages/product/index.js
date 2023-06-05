@@ -66,7 +66,7 @@ export default function Product() {
   return (
     <FilterContext.Provider value={{ filterParams, setFilterParams }}>
       <div className="container mx-auto flex">
-        <div className="bg-red-500 w-72 relative">
+        <div className="w-72 relative">
           <Sidebar />
         </div>
 

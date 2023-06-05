@@ -9,8 +9,8 @@ export default function SidebarFilter(props) {
   const [showAll, setShowAll] = useState(false);
   const style = {
     input:
-      "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600",
-    label: "ml-3 text-sm font-light text-gray-900 dark:text-gray-300",
+      "w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 mr-2",
+    label: "mx-4 text-sm font-light text-gray-900 ",
     button:
       "bg-red-700 text-white hover:bg-red-800 font-medium rounded-lg text-sm py-2 w-full mx-2 col-span-2",
   };

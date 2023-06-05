@@ -9,7 +9,7 @@ export default function ProductList({ data, loading }) {
   }
   return (
     <>
-      <div className="bg-white flex justify-between items-center rounded-md py-2.5 px-4 mb-2">
+      <div className="bg-inherit flex justify-between items-center rounded-md py-2.5 px-4 mb-2">
         <p>EARPHONE HAS {data?.length} PRODUCTS</p>
         {/* <Select data={d1} label="sort by" /> */}
       </div>

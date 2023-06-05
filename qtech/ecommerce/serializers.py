@@ -24,6 +24,8 @@ class VariantSerializer(serializers.ModelSerializer):
 
 
 class CategorySerializer(serializers.ModelSerializer):
+    image = fileSerializer.FileManagerSerializer(many=True)
+
     class Meta:
         model = models.Category
         fields = '__all__'

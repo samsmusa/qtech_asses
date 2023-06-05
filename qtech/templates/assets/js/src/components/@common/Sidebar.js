@@ -10,10 +10,10 @@ export default function Sidebar() {
     <div
       id="separator-sidebar"
       // class="fixed w-64 min-h-screen transition-transform -translate-x-full sm:translate-x-0"
-      class="sticky top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      class="sticky top-0 left-0 z-40 w-72 h-screen transition-transform -translate-x-full sm:translate-x-0"
       aria-label="Sidebar"
     >
-      <div class="h-full text-left px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
+      <div class="h-full text-left px-3 py-4 overflow-y-auto  scrollbar-hide backdrop-blur-sm bg-white/30 border">
         <PriceFilter />
         <Brand />
         <Size />
